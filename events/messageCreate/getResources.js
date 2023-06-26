@@ -18,14 +18,18 @@ module.exports = (message) => {
       console.log("PASSED");
     } else if (typeof message.mentions.users.first() != undefined) {
       user = message.mentions.users.first();
+      const tempUser = message.mentions.members.first();
+      
+      memberRoles = tempUser.roles.cache;
 
+      console.log(memberRoles.map((role) => role.name))
           
 
       console.log("PASSED");
     }
 
     const avatarURL = user.displayAvatarURL({ dynamic: true, size: 4096 });
-    foundMember = memberRoles.map((role) => role.name)
+    foundMember = memberRoles.map((role) => role.name )
     foundMember.pop();
   
     const listAsString = foundMember.join(', ');

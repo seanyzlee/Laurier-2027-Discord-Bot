@@ -1,7 +1,6 @@
 require('dotenv/config')
-const { Client, IntentsBitField } = require('discord.js');
+const { Client, IntentsBitField, ActivityType } = require('discord.js');
 const { CommandHandler } = require('djs-commander');
-const {stripIndents} = require("common-tags");
 const path = require('path');
 
 const client = new Client({
@@ -12,7 +11,6 @@ const client = new Client({
     IntentsBitField.Flags.MessageContent,
     IntentsBitField.Flags.GuildMessageReactions,
     ],
-
 });
 
 new CommandHandler({
@@ -21,7 +19,14 @@ new CommandHandler({
     commandsPath: path.join(__dirname,'commands')
 })
 
+client.on('ready', (c) => {
+    console.log(`${c.user.tag} is online`)
+    client.user.setActivity({
+        name: "Use !help",
+        type: ActivityType.Watching,
+    });
 
+})
 
 
 
