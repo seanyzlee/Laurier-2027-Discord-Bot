@@ -16,6 +16,7 @@ const { EmbedBuilder } = require("discord.js");
         { name: `"What are some easy electives to take in first year?"`, value: "Bird courses: https://docs.google.com/spreadsheets/d/1atGF0uJHqJI60ocBtfDy_TJH4xjkRkVZ72vJm7tJ8rs/edit#gid=0"},
         { name: `"Is [prof's name] easy?"`, value: "You can definitely ask in #general for more information of the prof! You can also use ratemyprof to lookup the prof's name for reviews by other students that have taken them before!"},
         { name: `"General tips for first-year?"`, value: "Have fun! Don't take too many spread out courses! Meet new people by going to orientation week's party! Hang out a lot but don't forget to study!"},
+        { name: `"When do I get to know about [things about residenec]"`, value: "Mid-Late July"},
         
       )
    

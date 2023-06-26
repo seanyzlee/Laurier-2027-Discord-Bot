@@ -4,7 +4,7 @@ module.exports = async (msg) => {
     if(msg.author.bot){
         return;
     }
-    if(msg.content.toLowerCase() === '!cute'){
+    if(msg.content.toLowerCase() === '!cat'){
         let getCute = async () => {
             let response = await axios.get('https://api.thecatapi.com/v1/images/search');
             let cute = response.data;
