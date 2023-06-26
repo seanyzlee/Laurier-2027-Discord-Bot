@@ -20,6 +20,7 @@ const { EmbedBuilder } = require("discord.js");
         { name: "!joke", value: "Get a random joke from the internet"},
         { name: "!cat", value: "Get a cute image of a cat from the internet"},
         { name: "!temp", value: "Get current temperature in Toronto"},
+        { name: "!rizz", value: "The Ultimate Rizzler"},
         { name: "!roll", value: "Roll a random value from 1-100"},
         { name: "!faq", value: "Display a list of frequently asked questions"},
         { name: "!ping", value: "Test if bot is working"}
