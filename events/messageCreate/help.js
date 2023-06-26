@@ -16,6 +16,7 @@ const { EmbedBuilder } = require("discord.js");
         { name: "!bba", value: "Retrieve important information about BBA"},
         { name: "!data", value: "Retrieve important information about data science"},
         { name: "!health", value: "Retrieve important information about health science"},
+        { name: "!math", value: "Retrieve important information about math"},
         { name: "!joke", value: "Get a random joke from the internet"},
         { name: "!cat", value: "Get a cute image of a cat from the internet"},
         { name: "!temp", value: "Get current temperature in Toronto"},
