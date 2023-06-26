@@ -19,39 +19,37 @@ module.exports = (message) => {
     } else if (typeof message.mentions.users.first() != undefined) {
       user = message.mentions.users.first();
 
-        foundMember = memberRoles.map((role) => role.memberCount)
-        console.log(foundMember)
+          
 
       console.log("PASSED");
     }
 
     const avatarURL = user.displayAvatarURL({ dynamic: true, size: 4096 });
+    foundMember = memberRoles.map((role) => role.name)
+    foundMember.pop();
+  
+    const listAsString = foundMember.join(', ');
     console.log(avatarURL);
 
-    const exampleEmbed = new EmbedBuilder()
+    const embed = new EmbedBuilder()
       .setColor(0x0099ff)
       .setTitle(user.username)
       .setAuthor({ name: user.username, iconURL: avatarURL, url: avatarURL })
       .setDescription(user.id)
       .setThumbnail(avatarURL)
       .addFields(
-        { name: "Laurier Class of 2027", value: "Some value here" },
+        { name: "Laurier Class of 2027", value: "Current Roles in the Server: \n" + listAsString },
         { name: "\u200B", value: "\u200B" },
-        { name: "Inline field title", value: "Some value here", inline: true },
-        { name: "Inline field title", value: "Some value here", inline: true }
+       
       )
-      .addFields({
-        name: "Inline field title",
-        value: "Some value here",
-        inline: true,
-      })
-      .setImage("https://i.imgur.com/AfFp7pu.png")
+     
+      .setImage(avatarURL)
       .setTimestamp()
       .setFooter({
-        text: "Some footer text here",
-        iconURL: "https://i.imgur.com/AfFp7pu.png",
+        text: "User's Avatar",
+        iconURL: avatarURL,
       });
 
-    message.reply({ embeds: [exampleEmbed] });
+    message.reply({ embeds: [embed] });
   }
 };
