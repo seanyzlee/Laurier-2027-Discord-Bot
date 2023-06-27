@@ -11,11 +11,10 @@ Contributed by: Amun Ahmad
 **How to contribute**
 
 **The technology and modules that were used to develop this bot are:**
-_Javascript
+Javascript
 Axios
 Discord-js
 Flask
-Commander-js (Command-handler)_
 
 Please make sure that you've read the documentation or watched a video on topics you do not understand before submitting a pull request.
 
@@ -27,32 +26,26 @@ The commands folder includes / commands (will be integrating text commands to / 
 
 .gitignores ignores node-modules and .env
 
-**To start contributing text commands,**
+**Node.JS Installation Guide**
+https://scribehow.com/shared/How_to_Download_Nodejs_on_Windows__uwUb1AK1TX2YKNKVwA5jyQ
+
+**To start contributing slash commands,**
 
 _Reference existing messageCreate scripts first._
 
 **Start by writing**
 ```
-module.exports = (var) => {
-	if(msg.content === "TEXT"){
-	THINGS YOU WANT HAPPENING
-	}
-}
-```
-
-**To start contributing /commands,**
-Reference existing / command scripts first.
-Start by writing
-
-```
 module.exports = {
-	data: {
-		name: "NAME"
-		description: "DESCRIPTION"
-	},
-
-	 run: ({interaction}) => {
-        interaction.reply('SAY THIS!')
-    }
-}
+    name: 'ping',
+    description: 'Pong!',
+    // devOnly: Boolean,
+    testOnly: true,
+    // options: Object[],
+    // deleted: Boolean,
+  
+    callback: (client, interaction) => {
+      interaction.reply(`Pong! ${client.ws.ping}ms`);
+    },
+  };
 ```
+Then change as you please
