@@ -1,7 +1,6 @@
 require('dotenv/config')
 const { Client, IntentsBitField, ActivityType } = require('discord.js');
-const { CommandHandler } = require('djs-commander');
-const path = require('path');
+const eventHandler = require('./handlers/eventHandler');
 
 const client = new Client({
     intents:[
@@ -13,11 +12,8 @@ const client = new Client({
     ],
 });
 
-new CommandHandler({
-    client,
-    eventsPath: path.join(__dirname, 'events'),
-    commandsPath: path.join(__dirname,'commands')
-})
+
+eventHandler(client);
 
 client.on('ready', (c) => {
     console.log(`${c.user.tag} is online`)
