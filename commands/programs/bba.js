@@ -1,19 +1,19 @@
 const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
-  name: "1122635061213282334",
+  name: "bba",
   description: "Get information about the BBA proram!",
   // devOnly: Boolean,
   testOnly: true,
   // options: Object[],
-  deleted: true,
+  deleted: false,
 
   callback: (client, interaction) => {
     if (interaction.user.bot) {
       return;
     }
 
-    const embed = new EmbedBuilSder()
+    const embed = new EmbedBuilder()
       .setColor(0xa020f0)
       .setTitle("Business Administration")
 
