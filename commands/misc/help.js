@@ -28,11 +28,11 @@ module.exports = {
         },
         { name: "/bba", value: "Retrieve important information about BBA" },
         {
-          name: "/data",
+          name: "/ds",
           value: "Retrieve important information about data science",
         },
         {
-          name: "/health",
+          name: "/hs",
           value: "Retrieve important information about health science",
         },
         { name: "/math", value: "Retrieve important information about math" },
