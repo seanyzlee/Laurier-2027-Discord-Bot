@@ -32,17 +32,19 @@ The commands folder includes / commands (will be integrating text commands to / 
 _Reference existing messageCreate scripts first._
 
 **Start by writing**
-
-a module.exports = (var) => {
+```
+module.exports = (var) => {
 	if(msg.content === "TEXT"){
 	THINGS YOU WANT HAPPENING
 	}
 }
+```
 
 **To start contributing /commands,**
 Reference existing / command scripts first.
 Start by writing
 
+```
 module.exports = {
 	data: {
 		name: "NAME"
@@ -53,3 +55,4 @@ module.exports = {
         interaction.reply('SAY THIS!')
     }
 }
+```
