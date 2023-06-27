@@ -20,39 +20,34 @@ Commander-js (Command-handler)_
 Please make sure that you've read the documentation or watched a video on topics you do not understand before submitting a pull request.
 
 Index.js boots the bot up and sets its presence, it also ensures that commander-js is connected to the respective folders to read the js scripts within the folders
-The events folder includes text commands and the bootup message script
-The commands folder includes / commands (will be integrating text commands to / commands soon)
+Event handlers and Utils handle events
+The commands folder includes / commands (where you will working)
+
+**NodeJS Installation guide**
+
+https://scribehow.com/shared/How_to_Download_Nodejs_on_Windows__uwUb1AK1TX2YKNKVwA5jyQ
 
 **The others (Axios and Flask) are modules that help with API calls and keep the bot alive (hosted on Replit) respectively.**
 
 .gitignores ignores node-modules and .env
 
-**To start contributing text commands,**
+**To start contributing slash commands,**
 
 _Reference existing messageCreate scripts first._
 
 **Start by writing**
 ```
-module.exports = (var) => {
-	if(msg.content === "TEXT"){
-	THINGS YOU WANT HAPPENING
-	}
-}
-```
-
-**To start contributing /commands,**
-Reference existing / command scripts first.
-Start by writing
-
-```
 module.exports = {
-	data: {
-		name: "NAME"
-		description: "DESCRIPTION"
-	},
-
-	 run: ({interaction}) => {
-        interaction.reply('SAY THIS!')
-    }
-}
+    name: 'ping',
+    description: 'Pong!',
+    // devOnly: Boolean,
+    testOnly: true,
+    // options: Object[],
+    // deleted: Boolean,
+  
+    callback: (client, interaction) => {
+      interaction.reply(`Pong! ${client.ws.ping}ms`);
+    },
+  };
 ```
+then changed to what's necessary
