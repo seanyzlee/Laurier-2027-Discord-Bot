@@ -18,7 +18,7 @@ eventHandler(client);
 client.on('ready', (c) => {
     console.log(`${c.user.tag} is online`)
     client.user.setActivity({
-        name: "Use !help",
+        name: "Use /help",
         type: ActivityType.Watching,
     });
 
