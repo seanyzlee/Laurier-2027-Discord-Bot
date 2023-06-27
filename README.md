@@ -2,11 +2,11 @@
 
 **A discord bot developed for the Laurier Class of '27 Discord, a community with over 200 + members.**
 
-_Developed and built by: Sean Lee
+Developed and built by: Sean Lee
 
 QA by: Amun Ahmad
 
-Contributed by: Amun Ahmad_
+Contributed by: Amun Ahmad
 
 **How to contribute**
 
