@@ -19,7 +19,7 @@ module.exports = {
 
       .addFields(
         {
-          name: "/getinfo",
+          name: "/get",
           value: "Return information about yourself or someone else",
         },
         {
