@@ -1,12 +1,12 @@
 const axios = require("axios");
 
 module.exports = {
-  name: "meme",
-  description: "Get a random meme from the internet",
+  name: "cpmeme",
+  description: "Get a random programming meme from the internet",
   // devOnly: Boolean,
   testOnly: true,
   // options: Object[],
-  // deleted: true,
+//   deleted: true,
 
   callback: async (client, interaction) => {
 
@@ -17,14 +17,10 @@ module.exports = {
 
     const options = {
         method: 'GET',
-        url: 'https://memes9.p.rapidapi.com/api/random',
-        params: {
-          genre: 'memes',
-          type: 'top'
-        },
+        url: 'https://programming-memes-images.p.rapidapi.com/v1/memes',
         headers: {
           'X-RapidAPI-Key': '7c326d32b2msh92084d34957c588p11d06djsn9a99d25cf813',
-          'X-RapidAPI-Host': 'memes9.p.rapidapi.com'
+          'X-RapidAPI-Host': 'programming-memes-images.p.rapidapi.com'
         }
       };
       
@@ -32,10 +28,10 @@ module.exports = {
           const response = await axios.request(options);
           console.log(response.data);
           let result = response.data;
-          interaction.reply(result.title + "\n" + result.url);
-
+          let returnResult = result.map((obj) => obj.image);
+          interaction.reply(returnResult[0]);
+        
       } catch (error) {
-          interaction.reply("Out for today, no more API calls :(");
           console.error(error);
       }
 
