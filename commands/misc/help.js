@@ -42,6 +42,7 @@ module.exports = {
         { name: "/rizz", value: "The Ultimate Rizzler" },
         { name: "/roll", value: "Roll a random value from 1-100" },
         { name: "/search", value: "Search up something (no NSFW or angry)" },
+        { name: "/meme", value: "Get a random meme from reddit" },
         { name: "/faq", value: "Display a list of frequently asked questions" },
         { name: "/ping", value: "Test if bot is working" }
       );

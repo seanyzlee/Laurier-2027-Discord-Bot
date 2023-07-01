@@ -3,7 +3,7 @@ const axios = require("axios");
 const { EmbedBuilder } = require("discord.js");
 
 module.exports = async (client) => {
-  const channel = client.channels.cache.get("1121823025076125759");
+  const channel = client.channels.cache.get("1124543943904858223");
 
   let getNews = async () => {
     let response = await axios.get(
@@ -19,7 +19,7 @@ module.exports = async (client) => {
   let mappedURLValues = returnValues.map((obj) => obj.link);
 
   var job = new CronJob(
-    "* * 1 * * *",
+    "0 7 * * *",
     function () {
       const embed = new EmbedBuilder()
         .setColor(0xfffff)
