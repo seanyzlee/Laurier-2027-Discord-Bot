@@ -41,6 +41,7 @@ module.exports = {
         { name: "/temp", value: "Get current temperature at Waterloo" },
         { name: "/rizz", value: "The Ultimate Rizzler" },
         { name: "/roll", value: "Roll a random value from 1-100" },
+        { name: "/search", value: "Search up something (no NSFW or angry)" },
         { name: "/faq", value: "Display a list of frequently asked questions" },
         { name: "/ping", value: "Test if bot is working" }
       );
