@@ -7,10 +7,15 @@ module.exports = {
       return;
     }
 
+
     const targetTermId = interaction.options.get("target-term").value;
     let titles, responseData, urls;
-    console.log(targetTermId);
+    if(targetTermId.length == 12){
+      return;
+    }
 
+    
+    
     const options = {
       method: "GET",
       url: "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI",
@@ -31,11 +36,8 @@ module.exports = {
       responseData = response.data.value;
       titles = responseData.map((obj) => obj.title);
       urls = responseData.map((obj) => obj.webpageUrl);
-    } catch (error) {
-      console.error(error);
-    }
 
-    const embed = new EmbedBuilder()
+      const embed = new EmbedBuilder()
       .setColor(0xa020f0)
       .setTitle("Search Results:")
 
@@ -65,7 +67,14 @@ module.exports = {
           value: urls[5],
         }
       );
-    interaction.reply({ embeds: [embed] });
+       interaction.reply({ embeds: [embed] });
+    } catch (error) {
+      
+      interaction.reply("Try shortening your search term");
+    }
+
+    
+   
   },
 
   name: "search",
